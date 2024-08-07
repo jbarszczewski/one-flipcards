@@ -1,0 +1,32 @@
+{
+	"locales(map)": {
+		"en": "🇬🇧 English (UK)",
+		"pl": "🇵🇱 Polski"
+	},
+	"appTitle": "Bloc Template",
+	"navigation": {
+		"home": "Home",
+		"settings": "Settings"
+	},
+	"itemsList": {
+		"title": "Items",
+		"sampleItemTitle": "Sample item {itemId}",
+		"refreshButton": "Refresh list"
+	},
+	"itemDetails": {
+		"title": "Item details",
+		"detailsPlaceholder": "Details for item {itemId}",
+		"deleteButton": "Delete this"
+	},
+	"settings": {
+		"title": "Settings",
+		"themes": {
+			"title": "Select a theme",
+			"options": {
+				"light": "Light",
+				"dark": "Dark",
+				"system": "System"
+			}
+		}
+	}
+}

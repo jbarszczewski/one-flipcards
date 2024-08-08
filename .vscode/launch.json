@@ -10,26 +10,34 @@
 			"type": "dart",
 			"program": "lib/main_local.dart",
 			"args": [
-				"--flavor local",
-				"--target lib/main_local.dart",
+				"--flavor",
+				"local",
+				"--target",
+				"lib/main_local.dart",
 			]
 		},
 		{
 			"name": "Debug staging mode",
 			"request": "launch",
 			"type": "dart",
+			"program": "lib/main_staging.dart",
 			"args": [
-				"--flavor staging",
-				"--target lib/main_staging.dart",
+				"--flavor",
+				"staging",
+				"--target",
+				"lib/main_staging.dart",
 			]
 		},
 		{
 			"name": "Debug production mode",
 			"request": "launch",
 			"type": "dart",
+			"program": "lib/main_production.dart",
 			"args": [
-				"--flavor production",
-				"--target lib/main_production.dart",
+				"--flavor",
+				"production",
+				"--target",
+				"lib/main_production.dart",
 			]
 		},
 		// {

@@ -1,4 +1,4 @@
-import 'package:bloc_template_app/src/features/sample_feature/data/sample_items_local_datasource.dart';
+import 'package:one_flipcards/src/features/sample_feature/data/sample_items_local_datasource.dart';
 
 import 'models/sample_item_viewmodel.dart';
 
@@ -21,7 +21,7 @@ class SampleItemsRepository {
     if (item == null) {
       throw Exception('Item not found');
     }
-    
+
     return SampleItemViewModel(
       id: item.id,
       name: item.name,

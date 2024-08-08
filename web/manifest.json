@@ -1,6 +1,6 @@
 {
-    "name": "bloc_template_app",
-    "short_name": "bloc_template_app",
+    "name": "one_flipcards",
+    "short_name": "one_flipcards",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

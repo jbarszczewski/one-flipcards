@@ -1,11 +1,11 @@
-import 'package:bloc_template_app/i18n/translations.g.dart';
-import 'package:bloc_template_app/src/app.dart';
-import 'package:bloc_template_app/src/features/sample_feature/domain/models/sample_item_viewmodel.dart';
-import 'package:bloc_template_app/src/features/sample_feature/domain/sample_items_repository.dart';
-import 'package:bloc_template_app/src/features/sample_feature/presentation/sample_item_details/sample_item_details_screen.dart';
-import 'package:bloc_template_app/src/features/sample_feature/presentation/sample_items_overview/sample_items_overview_screen.dart';
-import 'package:bloc_template_app/src/features/settings/domain/settings_repository.dart';
-import 'package:bloc_template_app/src/features/settings/presentation/settings_screen.dart';
+import 'package:one_flipcards/i18n/translations.g.dart';
+import 'package:one_flipcards/src/app.dart';
+import 'package:one_flipcards/src/features/sample_feature/domain/models/sample_item_viewmodel.dart';
+import 'package:one_flipcards/src/features/sample_feature/domain/sample_items_repository.dart';
+import 'package:one_flipcards/src/features/sample_feature/presentation/sample_item_details/sample_item_details_screen.dart';
+import 'package:one_flipcards/src/features/sample_feature/presentation/sample_items_overview/sample_items_overview_screen.dart';
+import 'package:one_flipcards/src/features/settings/domain/settings_repository.dart';
+import 'package:one_flipcards/src/features/settings/presentation/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
@@ -40,6 +40,7 @@ void main() {
       // Build the MyApp widget
       await tester.pumpWidget(TranslationProvider(
           child: App(
+              flavor: "Test",
               settingsRepository: mocksettingsRepository,
               sampleItemsRepository: mockItemsRepository)));
       await tester.pumpAndSettle();
@@ -51,6 +52,7 @@ void main() {
       // Build the MyApp widget
       await tester.pumpWidget(TranslationProvider(
           child: App(
+              flavor: "Test",
               settingsRepository: mocksettingsRepository,
               sampleItemsRepository: mockItemsRepository)));
 
@@ -71,6 +73,7 @@ void main() {
       // Build the MyApp widget
       await tester.pumpWidget(TranslationProvider(
           child: App(
+              flavor: "Test",
               settingsRepository: mocksettingsRepository,
               sampleItemsRepository: mockItemsRepository)));
 

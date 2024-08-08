@@ -1,5 +1,5 @@
-import 'package:bloc_template_app/src/core/themes/app_color_scheme.dart';
-import 'package:bloc_template_app/src/core/themes/app_palette.dart';
+import 'package:one_flipcards/src/core/themes/app_color_scheme.dart';
+import 'package:one_flipcards/src/core/themes/app_palette.dart';
 import 'package:flutter/material.dart';
 
 import 'colors_extension.dart';

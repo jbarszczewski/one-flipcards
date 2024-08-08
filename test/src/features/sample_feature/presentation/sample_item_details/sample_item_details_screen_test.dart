@@ -1,7 +1,7 @@
-import 'package:bloc_template_app/i18n/translations.g.dart';
-import 'package:bloc_template_app/src/features/sample_feature/domain/models/sample_item_viewmodel.dart';
-import 'package:bloc_template_app/src/features/sample_feature/presentation/sample_item_details/cubit/sample_item_details_cubit.dart';
-import 'package:bloc_template_app/src/features/sample_feature/presentation/sample_item_details/sample_item_details_screen.dart';
+import 'package:one_flipcards/i18n/translations.g.dart';
+import 'package:one_flipcards/src/features/sample_feature/domain/models/sample_item_viewmodel.dart';
+import 'package:one_flipcards/src/features/sample_feature/presentation/sample_item_details/cubit/sample_item_details_cubit.dart';
+import 'package:one_flipcards/src/features/sample_feature/presentation/sample_item_details/sample_item_details_screen.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -73,7 +73,7 @@ void main() {
               SampleItemViewModel(id: 'sampleId', name: 'Sample Name')));
       when(() => sampleItemDetailsCubit.deleteItem("sampleId"))
           .thenAnswer((_) async {});
-          
+
       await tester.pumpWidget(createWidgetUnderTest());
 
       await tester.tap(find.byType(ElevatedButton));

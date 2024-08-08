@@ -1,4 +1,4 @@
-package com.example.bloc_template_app
+package com.example.one_flipcards
 
 import io.flutter.embedding.android.FlutterActivity
 

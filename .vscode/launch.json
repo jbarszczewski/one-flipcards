@@ -8,37 +8,49 @@
 			"name": "Debug local mode",
 			"request": "launch",
 			"type": "dart",
+			"program": "lib/main_local.dart",
 			"args": [
-				"--dart-define-from-file=env.local.json"
+				"--flavor",
+				"local",
+				"--target",
+				"lib/main_local.dart",
 			]
 		},
 		{
 			"name": "Debug staging mode",
 			"request": "launch",
 			"type": "dart",
+			"program": "lib/main_staging.dart",
 			"args": [
-				"--dart-define-from-file=env.staging.json"
+				"--flavor",
+				"staging",
+				"--target",
+				"lib/main_staging.dart",
 			]
 		},
 		{
 			"name": "Debug production mode",
 			"request": "launch",
 			"type": "dart",
+			"program": "lib/main_production.dart",
 			"args": [
-				"--dart-define-from-file=env.prod.json"
+				"--flavor",
+				"production",
+				"--target",
+				"lib/main_production.dart",
 			]
 		},
-		{
-			"name": "Launch (profile mode)",
-			"request": "launch",
-			"type": "dart",
-			"flutterMode": "profile"
-		},
-		{
-			"name": "Launch (release mode)",
-			"request": "launch",
-			"type": "dart",
-			"flutterMode": "release"
-		}
+		// {
+		// 	"name": "Launch (profile mode)",
+		// 	"request": "launch",
+		// 	"type": "dart",
+		// 	"flutterMode": "profile"
+		// },
+		// {
+		// 	"name": "Launch (release mode)",
+		// 	"request": "launch",
+		// 	"type": "dart",
+		// 	"flutterMode": "release"
+		// }
 	]
 }

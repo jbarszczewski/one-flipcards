@@ -1,7 +1,7 @@
-import 'package:bloc_template_app/i18n/translations.g.dart';
-import 'package:bloc_template_app/src/features/sample_feature/domain/models/sample_item_viewmodel.dart';
-import 'package:bloc_template_app/src/features/sample_feature/presentation/sample_items_overview/bloc/sample_items_overview_bloc.dart';
-import 'package:bloc_template_app/src/features/sample_feature/presentation/sample_items_overview/sample_items_overview_screen.dart';
+import 'package:one_flipcards/i18n/translations.g.dart';
+import 'package:one_flipcards/src/features/sample_feature/domain/models/sample_item_viewmodel.dart';
+import 'package:one_flipcards/src/features/sample_feature/presentation/sample_items_overview/bloc/sample_items_overview_bloc.dart';
+import 'package:one_flipcards/src/features/sample_feature/presentation/sample_items_overview/sample_items_overview_screen.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

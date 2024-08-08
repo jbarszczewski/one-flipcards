@@ -1,7 +1,7 @@
-import 'package:bloc_template_app/src/features/sample_feature/domain/sample_items_repository.dart';
-import 'package:bloc_template_app/src/features/settings/domain/models/app_settings.dart';
-import 'package:bloc_template_app/src/features/settings/domain/settings_repository.dart';
-import 'package:bloc_template_app/src/features/settings/presentation/cubit/app_settings_cubit.dart';
+import 'package:one_flipcards/src/features/sample_feature/domain/sample_items_repository.dart';
+import 'package:one_flipcards/src/features/settings/domain/models/app_settings.dart';
+import 'package:one_flipcards/src/features/settings/domain/settings_repository.dart';
+import 'package:one_flipcards/src/features/settings/presentation/cubit/app_settings_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';

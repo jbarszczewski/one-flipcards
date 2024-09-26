@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/sample_feature/presentation/sample_item_details/sample_item_details_screen.dart';
-import '../../features/sample_feature/presentation/sample_items_overview/sample_items_overview_screen.dart';
+import '../../features/flipcards/presentation/flipcard_details/flipcard_details_screen.dart';
+import '../../features/flipcards/presentation/flipcards_overview/flipcards_overview_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../shared/widgets/assets.dart';
 import 'scaffold_with_nav_bar.dart';
@@ -38,12 +38,12 @@ GoRouter get appRouter => GoRouter(
                     name: AppRoutes.home.name,
                     path: '/',
                     builder: (context, state) =>
-                        const SampleItemsOverviewScreen(),
+                        const FlipcardsOverviewScreen(),
                     routes: [
                       GoRoute(
                         name: AppRoutes.details.name,
                         path: 'details/:id',
-                        builder: (context, state) => SampleItemDetailsScreen(
+                        builder: (context, state) => FlipcardDetailsScreen(
                             id: state.pathParameters['id'] ?? ''),
                       )
                     ]),

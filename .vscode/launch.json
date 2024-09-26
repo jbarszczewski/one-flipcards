@@ -10,8 +10,7 @@
 			"type": "dart",
 			"program": "lib/main_local.dart",
 			"args": [
-				"--flavor",
-				"local",
+				"--flavor local",
 				"--target",
 				"lib/main_local.dart",
 			]
@@ -39,18 +38,6 @@
 				"--target",
 				"lib/main_production.dart",
 			]
-		},
-		// {
-		// 	"name": "Launch (profile mode)",
-		// 	"request": "launch",
-		// 	"type": "dart",
-		// 	"flutterMode": "profile"
-		// },
-		// {
-		// 	"name": "Launch (release mode)",
-		// 	"request": "launch",
-		// 	"type": "dart",
-		// 	"flutterMode": "release"
-		// }
+		}
 	]
 }

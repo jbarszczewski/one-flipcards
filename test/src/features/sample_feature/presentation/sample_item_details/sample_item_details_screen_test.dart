@@ -1,28 +1,27 @@
-import 'package:one_flipcards/i18n/translations.g.dart';
-import 'package:one_flipcards/src/features/sample_feature/domain/models/sample_item_viewmodel.dart';
-import 'package:one_flipcards/src/features/sample_feature/presentation/sample_item_details/cubit/sample_item_details_cubit.dart';
-import 'package:one_flipcards/src/features/sample_feature/presentation/sample_item_details/sample_item_details_screen.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:one_flipcards/i18n/translations.g.dart';
+import 'package:one_flipcards/src/features/flipcards/domain/models/flipcard_viewmodel.dart';
+import 'package:one_flipcards/src/features/flipcards/presentation/flipcard_details/cubit/flipcard_details_cubit.dart';
+import 'package:one_flipcards/src/features/flipcards/presentation/flipcard_details/flipcard_details_screen.dart';
 
 void main() {
-  group('SampleItemDetailsScreen', () {
-    late SampleItemDetailsCubit sampleItemDetailsCubit;
+  group('FlipcardDetailsScreen', () {
+    late FlipcardDetailsCubit sampleItemDetailsCubit;
 
     setUp(() {
-      sampleItemDetailsCubit = MockSampleItemDetailsCubit();
+      sampleItemDetailsCubit = MockFlipcardDetailsCubit();
     });
 
     Widget createWidgetUnderTest() {
       return TranslationProvider(
         child: MaterialApp(
-          home: BlocProvider<SampleItemDetailsCubit>.value(
+          home: BlocProvider<FlipcardDetailsCubit>.value(
             value: sampleItemDetailsCubit,
-            child:
-                const Scaffold(body: SampleItemDetailsScreen(id: 'sampleId')),
+            child: const Scaffold(body: FlipcardDetailsScreen(id: 'sampleId')),
           ),
         ),
       );
@@ -31,7 +30,7 @@ void main() {
     testWidgets('renders CircularProgressIndicator when initial state',
         (WidgetTester tester) async {
       when(() => sampleItemDetailsCubit.state)
-          .thenReturn(const SampleItemDetailsState.initial());
+          .thenReturn(const FlipcardDetailsState.initial());
       when(() => sampleItemDetailsCubit.getItemById("sampleId"))
           .thenAnswer((_) async {});
 
@@ -43,7 +42,7 @@ void main() {
     testWidgets('renders CircularProgressIndicator when loading state',
         (WidgetTester tester) async {
       when(() => sampleItemDetailsCubit.state)
-          .thenReturn(const SampleItemDetailsState.loading());
+          .thenReturn(const FlipcardDetailsState.loading());
 
       await tester.pumpWidget(createWidgetUnderTest());
 
@@ -52,25 +51,26 @@ void main() {
 
     testWidgets('renders item details when success state',
         (WidgetTester tester) async {
-      const sampleItem = SampleItemViewModel(
-          id: 'sampleId', name: 'Sample Name', content: 'Sample Content');
+      const sampleItem = FlipcardViewModel(
+          id: 'sampleId',
+          frontContent: 'Sample Name',
+          backContent: 'Sample Content');
       when(() => sampleItemDetailsCubit.state)
-          .thenReturn(const SampleItemDetailsState.success(sampleItem));
+          .thenReturn(const FlipcardDetailsState.success(sampleItem));
 
       await tester.pumpWidget(createWidgetUnderTest());
 
       expect(find.text('ID: ${sampleItem.id}'), findsOneWidget);
-      expect(find.text('Name: ${sampleItem.name}'), findsOneWidget);
-      expect(
-          find.text('Optional content: ${sampleItem.content}'), findsOneWidget);
+      expect(find.text('Name: ${sampleItem.frontContent}'), findsOneWidget);
+      expect(find.text('Optional content: ${sampleItem.tags}'), findsOneWidget);
       expect(find.byType(ElevatedButton), findsOneWidget);
     });
 
     testWidgets('calls deleteItem when delete button is pressed',
         (WidgetTester tester) async {
       when(() => sampleItemDetailsCubit.state).thenReturn(
-          const SampleItemDetailsState.success(
-              SampleItemViewModel(id: 'sampleId', name: 'Sample Name')));
+          const FlipcardDetailsState.success(FlipcardViewModel(
+              id: 'sampleId', frontContent: 'Sample', backContent: 'Item')));
       when(() => sampleItemDetailsCubit.deleteItem("sampleId"))
           .thenAnswer((_) async {});
 
@@ -83,5 +83,5 @@ void main() {
   });
 }
 
-class MockSampleItemDetailsCubit extends MockCubit<SampleItemDetailsState>
-    implements SampleItemDetailsCubit {}
+class MockFlipcardDetailsCubit extends MockCubit<FlipcardDetailsState>
+    implements FlipcardDetailsCubit {}

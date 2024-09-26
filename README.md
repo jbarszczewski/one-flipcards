@@ -57,4 +57,5 @@ dart run flutter_native_splash:create
 dart run flutter_native_splash:remove
 
 ## Launcher icons
+### Generate
 dart run flutter_launcher_icons:main -f flutter_launcher_icons*

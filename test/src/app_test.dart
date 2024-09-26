@@ -1,19 +1,19 @@
-import 'package:one_flipcards/i18n/translations.g.dart';
-import 'package:one_flipcards/src/app.dart';
-import 'package:one_flipcards/src/features/sample_feature/domain/models/sample_item_viewmodel.dart';
-import 'package:one_flipcards/src/features/sample_feature/domain/sample_items_repository.dart';
-import 'package:one_flipcards/src/features/sample_feature/presentation/sample_item_details/sample_item_details_screen.dart';
-import 'package:one_flipcards/src/features/sample_feature/presentation/sample_items_overview/sample_items_overview_screen.dart';
-import 'package:one_flipcards/src/features/settings/domain/settings_repository.dart';
-import 'package:one_flipcards/src/features/settings/presentation/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:one_flipcards/i18n/translations.g.dart';
+import 'package:one_flipcards/src/app.dart';
+import 'package:one_flipcards/src/features/flipcards/domain/flipcards_repository.dart';
+import 'package:one_flipcards/src/features/flipcards/domain/models/flipcard_viewmodel.dart';
+import 'package:one_flipcards/src/features/flipcards/presentation/flipcard_details/flipcard_details_screen.dart';
+import 'package:one_flipcards/src/features/flipcards/presentation/flipcards_overview/flipcards_overview_screen.dart';
+import 'package:one_flipcards/src/features/settings/domain/settings_repository.dart';
+import 'package:one_flipcards/src/features/settings/presentation/settings_screen.dart';
 
 void main() {
   group("App", () {
     late MocksettingsRepository mocksettingsRepository;
-    late MockSampleItemsRepository mockItemsRepository;
+    late MockFlipcardsRepository mockItemsRepository;
 
     setUp(() {
       mocksettingsRepository = MocksettingsRepository();
@@ -24,17 +24,26 @@ void main() {
       when(() => mocksettingsRepository.languageCode())
           .thenAnswer((_) async => language);
 
-      mockItemsRepository = MockSampleItemsRepository();
-      when(() => mockItemsRepository.watchSampleItems())
+      mockItemsRepository = MockFlipcardsRepository();
+      when(() => mockItemsRepository.watchFlipcards())
           .thenAnswer((_) => Stream.value([
-                const SampleItemViewModel(
-                    id: '1', name: 'Item 1', content: 'This is item 1'),
-                const SampleItemViewModel(id: '2', name: 'Item 2'),
-                const SampleItemViewModel(
-                    id: '3', name: 'Item 3', content: 'This is item 3'),
+                const FlipcardViewModel(
+                    id: '1',
+                    frontContent: 'Item 1',
+                    backContent: 'This is item 1',
+                    tags: 'tag1, tag2'),
+                const FlipcardViewModel(
+                    id: '2',
+                    frontContent: 'Item 2',
+                    backContent: 'This is item 2'),
+                const FlipcardViewModel(
+                    id: '3',
+                    frontContent: 'Item 3',
+                    backContent: 'This is item 3'),
               ]));
-      when(() => mockItemsRepository.getSampleItemById('1')).thenAnswer(
-          (_) async => const SampleItemViewModel(id: '1', name: 'Item 1'));
+      when(() => mockItemsRepository.getFlipcardById('1')).thenAnswer(
+          (_) async => const FlipcardViewModel(
+              id: '1', frontContent: 'Item 1', backContent: 'This is item 1'));
     });
     testWidgets('displays sample items list view', (tester) async {
       // Build the MyApp widget
@@ -44,8 +53,8 @@ void main() {
               settingsRepository: mocksettingsRepository,
               sampleItemsRepository: mockItemsRepository)));
       await tester.pumpAndSettle();
-      // Verify that the SampleItemListView is displayed
-      expect(find.byType(SampleItemsOverviewScreen), findsOneWidget);
+      // Verify that the FlipcardListView is displayed
+      expect(find.byType(FlipcardsOverviewScreen), findsOneWidget);
     });
 
     testWidgets('displays sample item details view', (tester) async {
@@ -65,8 +74,8 @@ void main() {
       // Wait for the animation to complete
       await tester.pumpAndSettle();
 
-      // Verify that the SampleItemDetailsView is displayed
-      expect(find.byType(SampleItemDetailsScreen), findsOneWidget);
+      // Verify that the FlipcardDetailsView is displayed
+      expect(find.byType(FlipcardDetailsScreen), findsOneWidget);
     });
 
     testWidgets('displays settings view', (tester) async {
@@ -92,6 +101,6 @@ void main() {
   });
 }
 
-class MockSampleItemsRepository extends Mock implements SampleItemsRepository {}
+class MockFlipcardsRepository extends Mock implements FlipcardsRepository {}
 
 class MocksettingsRepository extends Mock implements SettingsRepository {}

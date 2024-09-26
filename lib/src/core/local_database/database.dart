@@ -11,7 +11,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqlite3/sqlite3.dart';
 import 'package:sqlite3_flutter_libs/sqlite3_flutter_libs.dart';
 
-import 'models/sample_items.dart';
+import 'models/flipcards.dart';
 
 part 'database.g.dart';
 
@@ -36,7 +36,7 @@ LazyDatabase _openConnection(String dbName) {
   });
 }
 
-@DriftDatabase(tables: [SampleItems])
+@DriftDatabase(tables: [Flipcards])
 class LocalDatabase extends _$LocalDatabase {
   LocalDatabase(String dbName) : super(_openConnection(dbName));
 

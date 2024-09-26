@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sample_item_details_cubit.dart';
+part of 'flipcard_details_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,13 +15,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$SampleItemDetailsState {
+mixin _$FlipcardDetailsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(SampleItemViewModel item) success,
+    required TResult Function(FlipcardViewModel item) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$SampleItemDetailsState {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(SampleItemViewModel item)? success,
+    TResult? Function(FlipcardViewModel item)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$SampleItemDetailsState {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(SampleItemViewModel item)? success,
+    TResult Function(FlipcardViewModel item)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,17 +69,17 @@ mixin _$SampleItemDetailsState {
 }
 
 /// @nodoc
-abstract class $SampleItemDetailsStateCopyWith<$Res> {
-  factory $SampleItemDetailsStateCopyWith(SampleItemDetailsState value,
-          $Res Function(SampleItemDetailsState) then) =
-      _$SampleItemDetailsStateCopyWithImpl<$Res, SampleItemDetailsState>;
+abstract class $FlipcardDetailsStateCopyWith<$Res> {
+  factory $FlipcardDetailsStateCopyWith(FlipcardDetailsState value,
+          $Res Function(FlipcardDetailsState) then) =
+      _$FlipcardDetailsStateCopyWithImpl<$Res, FlipcardDetailsState>;
 }
 
 /// @nodoc
-class _$SampleItemDetailsStateCopyWithImpl<$Res,
-        $Val extends SampleItemDetailsState>
-    implements $SampleItemDetailsStateCopyWith<$Res> {
-  _$SampleItemDetailsStateCopyWithImpl(this._value, this._then);
+class _$FlipcardDetailsStateCopyWithImpl<$Res,
+        $Val extends FlipcardDetailsState>
+    implements $FlipcardDetailsStateCopyWith<$Res> {
+  _$FlipcardDetailsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -96,7 +96,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$SampleItemDetailsStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$FlipcardDetailsStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -110,7 +110,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'SampleItemDetailsState.error()';
+    return 'FlipcardDetailsState.error()';
   }
 
   @override
@@ -128,7 +128,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(SampleItemViewModel item) success,
+    required TResult Function(FlipcardViewModel item) success,
   }) {
     return error();
   }
@@ -139,7 +139,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(SampleItemViewModel item)? success,
+    TResult? Function(FlipcardViewModel item)? success,
   }) {
     return error?.call();
   }
@@ -150,7 +150,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(SampleItemViewModel item)? success,
+    TResult Function(FlipcardViewModel item)? success,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -197,7 +197,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements SampleItemDetailsState {
+abstract class _Error implements FlipcardDetailsState {
   const factory _Error() = _$ErrorImpl;
 }
 
@@ -210,7 +210,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$SampleItemDetailsStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$FlipcardDetailsStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -224,7 +224,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'SampleItemDetailsState.initial()';
+    return 'FlipcardDetailsState.initial()';
   }
 
   @override
@@ -242,7 +242,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(SampleItemViewModel item) success,
+    required TResult Function(FlipcardViewModel item) success,
   }) {
     return initial();
   }
@@ -253,7 +253,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(SampleItemViewModel item)? success,
+    TResult? Function(FlipcardViewModel item)? success,
   }) {
     return initial?.call();
   }
@@ -264,7 +264,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(SampleItemViewModel item)? success,
+    TResult Function(FlipcardViewModel item)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -311,7 +311,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements SampleItemDetailsState {
+abstract class _Initial implements FlipcardDetailsState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -324,7 +324,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$SampleItemDetailsStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$FlipcardDetailsStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -338,7 +338,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'SampleItemDetailsState.loading()';
+    return 'FlipcardDetailsState.loading()';
   }
 
   @override
@@ -356,7 +356,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(SampleItemViewModel item) success,
+    required TResult Function(FlipcardViewModel item) success,
   }) {
     return loading();
   }
@@ -367,7 +367,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(SampleItemViewModel item)? success,
+    TResult? Function(FlipcardViewModel item)? success,
   }) {
     return loading?.call();
   }
@@ -378,7 +378,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(SampleItemViewModel item)? success,
+    TResult Function(FlipcardViewModel item)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -425,7 +425,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements SampleItemDetailsState {
+abstract class _Loading implements FlipcardDetailsState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -435,14 +435,14 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({SampleItemViewModel item});
+  $Res call({FlipcardViewModel item});
 
-  $SampleItemViewModelCopyWith<$Res> get item;
+  $FlipcardViewModelCopyWith<$Res> get item;
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$SampleItemDetailsStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$FlipcardDetailsStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -457,14 +457,14 @@ class __$$SuccessImplCopyWithImpl<$Res>
       null == item
           ? _value.item
           : item // ignore: cast_nullable_to_non_nullable
-              as SampleItemViewModel,
+              as FlipcardViewModel,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SampleItemViewModelCopyWith<$Res> get item {
-    return $SampleItemViewModelCopyWith<$Res>(_value.item, (value) {
+  $FlipcardViewModelCopyWith<$Res> get item {
+    return $FlipcardViewModelCopyWith<$Res>(_value.item, (value) {
       return _then(_value.copyWith(item: value));
     });
   }
@@ -476,11 +476,11 @@ class _$SuccessImpl implements _Success {
   const _$SuccessImpl(this.item);
 
   @override
-  final SampleItemViewModel item;
+  final FlipcardViewModel item;
 
   @override
   String toString() {
-    return 'SampleItemDetailsState.success(item: $item)';
+    return 'FlipcardDetailsState.success(item: $item)';
   }
 
   @override
@@ -506,7 +506,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(SampleItemViewModel item) success,
+    required TResult Function(FlipcardViewModel item) success,
   }) {
     return success(item);
   }
@@ -517,7 +517,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(SampleItemViewModel item)? success,
+    TResult? Function(FlipcardViewModel item)? success,
   }) {
     return success?.call(item);
   }
@@ -528,7 +528,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(SampleItemViewModel item)? success,
+    TResult Function(FlipcardViewModel item)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -575,10 +575,10 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements SampleItemDetailsState {
-  const factory _Success(final SampleItemViewModel item) = _$SuccessImpl;
+abstract class _Success implements FlipcardDetailsState {
+  const factory _Success(final FlipcardViewModel item) = _$SuccessImpl;
 
-  SampleItemViewModel get item;
+  FlipcardViewModel get item;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;

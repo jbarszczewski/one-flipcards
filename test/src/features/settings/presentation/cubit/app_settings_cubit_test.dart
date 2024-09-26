@@ -1,10 +1,10 @@
-import 'package:one_flipcards/src/features/sample_feature/domain/sample_items_repository.dart';
-import 'package:one_flipcards/src/features/settings/domain/models/app_settings.dart';
-import 'package:one_flipcards/src/features/settings/domain/settings_repository.dart';
-import 'package:one_flipcards/src/features/settings/presentation/cubit/app_settings_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:one_flipcards/src/features/flipcards/domain/flipcards_repository.dart';
+import 'package:one_flipcards/src/features/settings/domain/models/app_settings.dart';
+import 'package:one_flipcards/src/features/settings/domain/settings_repository.dart';
+import 'package:one_flipcards/src/features/settings/presentation/cubit/app_settings_cubit.dart';
 
 void main() {
   group('AppSettingsCubit', () {
@@ -90,6 +90,6 @@ void main() {
   });
 }
 
-class MockSampleItemsRepository extends Mock implements SampleItemsRepository {}
+class MockFlipcardsRepository extends Mock implements FlipcardsRepository {}
 
 class MocksettingsRepository extends Mock implements SettingsRepository {}

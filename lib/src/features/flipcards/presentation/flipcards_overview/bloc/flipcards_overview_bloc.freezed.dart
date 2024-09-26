@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sample_items_overview_bloc.dart';
+part of 'flipcards_overview_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,27 +15,27 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$SampleItemsOverviewEvent {
+mixin _$FlipcardsOverviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SampleItemViewModel item) createItem,
-    required TResult Function(String id) deleteItem,
+    required TResult Function(FlipcardViewModel flipcard) createFlipcard,
+    required TResult Function(String id) deleteFlipcard,
     required TResult Function() started,
     required TResult Function() subscribe,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SampleItemViewModel item)? createItem,
-    TResult? Function(String id)? deleteItem,
+    TResult? Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult? Function(String id)? deleteFlipcard,
     TResult? Function()? started,
     TResult? Function()? subscribe,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SampleItemViewModel item)? createItem,
-    TResult Function(String id)? deleteItem,
+    TResult Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult Function(String id)? deleteFlipcard,
     TResult Function()? started,
     TResult Function()? subscribe,
     required TResult orElse(),
@@ -43,24 +43,24 @@ mixin _$SampleItemsOverviewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreateItem value) createItem,
-    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_CreateFlipcard value) createFlipcard,
+    required TResult Function(_DeleteFlipcard value) deleteFlipcard,
     required TResult Function(_Started value) started,
     required TResult Function(_Subscribe value) subscribe,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreateItem value)? createItem,
-    TResult? Function(_DeleteItem value)? deleteItem,
+    TResult? Function(_CreateFlipcard value)? createFlipcard,
+    TResult? Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult? Function(_Started value)? started,
     TResult? Function(_Subscribe value)? subscribe,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreateItem value)? createItem,
-    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_CreateFlipcard value)? createFlipcard,
+    TResult Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult Function(_Started value)? started,
     TResult Function(_Subscribe value)? subscribe,
     required TResult orElse(),
@@ -69,17 +69,17 @@ mixin _$SampleItemsOverviewEvent {
 }
 
 /// @nodoc
-abstract class $SampleItemsOverviewEventCopyWith<$Res> {
-  factory $SampleItemsOverviewEventCopyWith(SampleItemsOverviewEvent value,
-          $Res Function(SampleItemsOverviewEvent) then) =
-      _$SampleItemsOverviewEventCopyWithImpl<$Res, SampleItemsOverviewEvent>;
+abstract class $FlipcardsOverviewEventCopyWith<$Res> {
+  factory $FlipcardsOverviewEventCopyWith(FlipcardsOverviewEvent value,
+          $Res Function(FlipcardsOverviewEvent) then) =
+      _$FlipcardsOverviewEventCopyWithImpl<$Res, FlipcardsOverviewEvent>;
 }
 
 /// @nodoc
-class _$SampleItemsOverviewEventCopyWithImpl<$Res,
-        $Val extends SampleItemsOverviewEvent>
-    implements $SampleItemsOverviewEventCopyWith<$Res> {
-  _$SampleItemsOverviewEventCopyWithImpl(this._value, this._then);
+class _$FlipcardsOverviewEventCopyWithImpl<$Res,
+        $Val extends FlipcardsOverviewEvent>
+    implements $FlipcardsOverviewEventCopyWith<$Res> {
+  _$FlipcardsOverviewEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -88,109 +88,111 @@ class _$SampleItemsOverviewEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$CreateItemImplCopyWith<$Res> {
-  factory _$$CreateItemImplCopyWith(
-          _$CreateItemImpl value, $Res Function(_$CreateItemImpl) then) =
-      __$$CreateItemImplCopyWithImpl<$Res>;
+abstract class _$$CreateFlipcardImplCopyWith<$Res> {
+  factory _$$CreateFlipcardImplCopyWith(_$CreateFlipcardImpl value,
+          $Res Function(_$CreateFlipcardImpl) then) =
+      __$$CreateFlipcardImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({SampleItemViewModel item});
+  $Res call({FlipcardViewModel flipcard});
 
-  $SampleItemViewModelCopyWith<$Res> get item;
+  $FlipcardViewModelCopyWith<$Res> get flipcard;
 }
 
 /// @nodoc
-class __$$CreateItemImplCopyWithImpl<$Res>
-    extends _$SampleItemsOverviewEventCopyWithImpl<$Res, _$CreateItemImpl>
-    implements _$$CreateItemImplCopyWith<$Res> {
-  __$$CreateItemImplCopyWithImpl(
-      _$CreateItemImpl _value, $Res Function(_$CreateItemImpl) _then)
+class __$$CreateFlipcardImplCopyWithImpl<$Res>
+    extends _$FlipcardsOverviewEventCopyWithImpl<$Res, _$CreateFlipcardImpl>
+    implements _$$CreateFlipcardImplCopyWith<$Res> {
+  __$$CreateFlipcardImplCopyWithImpl(
+      _$CreateFlipcardImpl _value, $Res Function(_$CreateFlipcardImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? item = null,
+    Object? flipcard = null,
   }) {
-    return _then(_$CreateItemImpl(
-      null == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as SampleItemViewModel,
+    return _then(_$CreateFlipcardImpl(
+      null == flipcard
+          ? _value.flipcard
+          : flipcard // ignore: cast_nullable_to_non_nullable
+              as FlipcardViewModel,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SampleItemViewModelCopyWith<$Res> get item {
-    return $SampleItemViewModelCopyWith<$Res>(_value.item, (value) {
-      return _then(_value.copyWith(item: value));
+  $FlipcardViewModelCopyWith<$Res> get flipcard {
+    return $FlipcardViewModelCopyWith<$Res>(_value.flipcard, (value) {
+      return _then(_value.copyWith(flipcard: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$CreateItemImpl implements _CreateItem {
-  const _$CreateItemImpl(this.item);
+class _$CreateFlipcardImpl implements _CreateFlipcard {
+  const _$CreateFlipcardImpl(this.flipcard);
 
   @override
-  final SampleItemViewModel item;
+  final FlipcardViewModel flipcard;
 
   @override
   String toString() {
-    return 'SampleItemsOverviewEvent.createItem(item: $item)';
+    return 'FlipcardsOverviewEvent.createFlipcard(flipcard: $flipcard)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateItemImpl &&
-            (identical(other.item, item) || other.item == item));
+            other is _$CreateFlipcardImpl &&
+            (identical(other.flipcard, flipcard) ||
+                other.flipcard == flipcard));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, item);
+  int get hashCode => Object.hash(runtimeType, flipcard);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CreateItemImplCopyWith<_$CreateItemImpl> get copyWith =>
-      __$$CreateItemImplCopyWithImpl<_$CreateItemImpl>(this, _$identity);
+  _$$CreateFlipcardImplCopyWith<_$CreateFlipcardImpl> get copyWith =>
+      __$$CreateFlipcardImplCopyWithImpl<_$CreateFlipcardImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SampleItemViewModel item) createItem,
-    required TResult Function(String id) deleteItem,
+    required TResult Function(FlipcardViewModel flipcard) createFlipcard,
+    required TResult Function(String id) deleteFlipcard,
     required TResult Function() started,
     required TResult Function() subscribe,
   }) {
-    return createItem(item);
+    return createFlipcard(flipcard);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SampleItemViewModel item)? createItem,
-    TResult? Function(String id)? deleteItem,
+    TResult? Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult? Function(String id)? deleteFlipcard,
     TResult? Function()? started,
     TResult? Function()? subscribe,
   }) {
-    return createItem?.call(item);
+    return createFlipcard?.call(flipcard);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SampleItemViewModel item)? createItem,
-    TResult Function(String id)? deleteItem,
+    TResult Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult Function(String id)? deleteFlipcard,
     TResult Function()? started,
     TResult Function()? subscribe,
     required TResult orElse(),
   }) {
-    if (createItem != null) {
-      return createItem(item);
+    if (createFlipcard != null) {
+      return createFlipcard(flipcard);
     }
     return orElse();
   }
@@ -198,65 +200,66 @@ class _$CreateItemImpl implements _CreateItem {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreateItem value) createItem,
-    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_CreateFlipcard value) createFlipcard,
+    required TResult Function(_DeleteFlipcard value) deleteFlipcard,
     required TResult Function(_Started value) started,
     required TResult Function(_Subscribe value) subscribe,
   }) {
-    return createItem(this);
+    return createFlipcard(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreateItem value)? createItem,
-    TResult? Function(_DeleteItem value)? deleteItem,
+    TResult? Function(_CreateFlipcard value)? createFlipcard,
+    TResult? Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult? Function(_Started value)? started,
     TResult? Function(_Subscribe value)? subscribe,
   }) {
-    return createItem?.call(this);
+    return createFlipcard?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreateItem value)? createItem,
-    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_CreateFlipcard value)? createFlipcard,
+    TResult Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult Function(_Started value)? started,
     TResult Function(_Subscribe value)? subscribe,
     required TResult orElse(),
   }) {
-    if (createItem != null) {
-      return createItem(this);
+    if (createFlipcard != null) {
+      return createFlipcard(this);
     }
     return orElse();
   }
 }
 
-abstract class _CreateItem implements SampleItemsOverviewEvent {
-  const factory _CreateItem(final SampleItemViewModel item) = _$CreateItemImpl;
+abstract class _CreateFlipcard implements FlipcardsOverviewEvent {
+  const factory _CreateFlipcard(final FlipcardViewModel flipcard) =
+      _$CreateFlipcardImpl;
 
-  SampleItemViewModel get item;
+  FlipcardViewModel get flipcard;
   @JsonKey(ignore: true)
-  _$$CreateItemImplCopyWith<_$CreateItemImpl> get copyWith =>
+  _$$CreateFlipcardImplCopyWith<_$CreateFlipcardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeleteItemImplCopyWith<$Res> {
-  factory _$$DeleteItemImplCopyWith(
-          _$DeleteItemImpl value, $Res Function(_$DeleteItemImpl) then) =
-      __$$DeleteItemImplCopyWithImpl<$Res>;
+abstract class _$$DeleteFlipcardImplCopyWith<$Res> {
+  factory _$$DeleteFlipcardImplCopyWith(_$DeleteFlipcardImpl value,
+          $Res Function(_$DeleteFlipcardImpl) then) =
+      __$$DeleteFlipcardImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String id});
 }
 
 /// @nodoc
-class __$$DeleteItemImplCopyWithImpl<$Res>
-    extends _$SampleItemsOverviewEventCopyWithImpl<$Res, _$DeleteItemImpl>
-    implements _$$DeleteItemImplCopyWith<$Res> {
-  __$$DeleteItemImplCopyWithImpl(
-      _$DeleteItemImpl _value, $Res Function(_$DeleteItemImpl) _then)
+class __$$DeleteFlipcardImplCopyWithImpl<$Res>
+    extends _$FlipcardsOverviewEventCopyWithImpl<$Res, _$DeleteFlipcardImpl>
+    implements _$$DeleteFlipcardImplCopyWith<$Res> {
+  __$$DeleteFlipcardImplCopyWithImpl(
+      _$DeleteFlipcardImpl _value, $Res Function(_$DeleteFlipcardImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -264,7 +267,7 @@ class __$$DeleteItemImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$DeleteItemImpl(
+    return _then(_$DeleteFlipcardImpl(
       null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -275,22 +278,22 @@ class __$$DeleteItemImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeleteItemImpl implements _DeleteItem {
-  const _$DeleteItemImpl(this.id);
+class _$DeleteFlipcardImpl implements _DeleteFlipcard {
+  const _$DeleteFlipcardImpl(this.id);
 
   @override
   final String id;
 
   @override
   String toString() {
-    return 'SampleItemsOverviewEvent.deleteItem(id: $id)';
+    return 'FlipcardsOverviewEvent.deleteFlipcard(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeleteItemImpl &&
+            other is _$DeleteFlipcardImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -300,42 +303,43 @@ class _$DeleteItemImpl implements _DeleteItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DeleteItemImplCopyWith<_$DeleteItemImpl> get copyWith =>
-      __$$DeleteItemImplCopyWithImpl<_$DeleteItemImpl>(this, _$identity);
+  _$$DeleteFlipcardImplCopyWith<_$DeleteFlipcardImpl> get copyWith =>
+      __$$DeleteFlipcardImplCopyWithImpl<_$DeleteFlipcardImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SampleItemViewModel item) createItem,
-    required TResult Function(String id) deleteItem,
+    required TResult Function(FlipcardViewModel flipcard) createFlipcard,
+    required TResult Function(String id) deleteFlipcard,
     required TResult Function() started,
     required TResult Function() subscribe,
   }) {
-    return deleteItem(id);
+    return deleteFlipcard(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SampleItemViewModel item)? createItem,
-    TResult? Function(String id)? deleteItem,
+    TResult? Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult? Function(String id)? deleteFlipcard,
     TResult? Function()? started,
     TResult? Function()? subscribe,
   }) {
-    return deleteItem?.call(id);
+    return deleteFlipcard?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SampleItemViewModel item)? createItem,
-    TResult Function(String id)? deleteItem,
+    TResult Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult Function(String id)? deleteFlipcard,
     TResult Function()? started,
     TResult Function()? subscribe,
     required TResult orElse(),
   }) {
-    if (deleteItem != null) {
-      return deleteItem(id);
+    if (deleteFlipcard != null) {
+      return deleteFlipcard(id);
     }
     return orElse();
   }
@@ -343,47 +347,47 @@ class _$DeleteItemImpl implements _DeleteItem {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreateItem value) createItem,
-    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_CreateFlipcard value) createFlipcard,
+    required TResult Function(_DeleteFlipcard value) deleteFlipcard,
     required TResult Function(_Started value) started,
     required TResult Function(_Subscribe value) subscribe,
   }) {
-    return deleteItem(this);
+    return deleteFlipcard(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreateItem value)? createItem,
-    TResult? Function(_DeleteItem value)? deleteItem,
+    TResult? Function(_CreateFlipcard value)? createFlipcard,
+    TResult? Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult? Function(_Started value)? started,
     TResult? Function(_Subscribe value)? subscribe,
   }) {
-    return deleteItem?.call(this);
+    return deleteFlipcard?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreateItem value)? createItem,
-    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_CreateFlipcard value)? createFlipcard,
+    TResult Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult Function(_Started value)? started,
     TResult Function(_Subscribe value)? subscribe,
     required TResult orElse(),
   }) {
-    if (deleteItem != null) {
-      return deleteItem(this);
+    if (deleteFlipcard != null) {
+      return deleteFlipcard(this);
     }
     return orElse();
   }
 }
 
-abstract class _DeleteItem implements SampleItemsOverviewEvent {
-  const factory _DeleteItem(final String id) = _$DeleteItemImpl;
+abstract class _DeleteFlipcard implements FlipcardsOverviewEvent {
+  const factory _DeleteFlipcard(final String id) = _$DeleteFlipcardImpl;
 
   String get id;
   @JsonKey(ignore: true)
-  _$$DeleteItemImplCopyWith<_$DeleteItemImpl> get copyWith =>
+  _$$DeleteFlipcardImplCopyWith<_$DeleteFlipcardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -396,7 +400,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$SampleItemsOverviewEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$FlipcardsOverviewEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -410,7 +414,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'SampleItemsOverviewEvent.started()';
+    return 'FlipcardsOverviewEvent.started()';
   }
 
   @override
@@ -425,8 +429,8 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SampleItemViewModel item) createItem,
-    required TResult Function(String id) deleteItem,
+    required TResult Function(FlipcardViewModel flipcard) createFlipcard,
+    required TResult Function(String id) deleteFlipcard,
     required TResult Function() started,
     required TResult Function() subscribe,
   }) {
@@ -436,8 +440,8 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SampleItemViewModel item)? createItem,
-    TResult? Function(String id)? deleteItem,
+    TResult? Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult? Function(String id)? deleteFlipcard,
     TResult? Function()? started,
     TResult? Function()? subscribe,
   }) {
@@ -447,8 +451,8 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SampleItemViewModel item)? createItem,
-    TResult Function(String id)? deleteItem,
+    TResult Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult Function(String id)? deleteFlipcard,
     TResult Function()? started,
     TResult Function()? subscribe,
     required TResult orElse(),
@@ -462,8 +466,8 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreateItem value) createItem,
-    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_CreateFlipcard value) createFlipcard,
+    required TResult Function(_DeleteFlipcard value) deleteFlipcard,
     required TResult Function(_Started value) started,
     required TResult Function(_Subscribe value) subscribe,
   }) {
@@ -473,8 +477,8 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreateItem value)? createItem,
-    TResult? Function(_DeleteItem value)? deleteItem,
+    TResult? Function(_CreateFlipcard value)? createFlipcard,
+    TResult? Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult? Function(_Started value)? started,
     TResult? Function(_Subscribe value)? subscribe,
   }) {
@@ -484,8 +488,8 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreateItem value)? createItem,
-    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_CreateFlipcard value)? createFlipcard,
+    TResult Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult Function(_Started value)? started,
     TResult Function(_Subscribe value)? subscribe,
     required TResult orElse(),
@@ -497,7 +501,7 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements SampleItemsOverviewEvent {
+abstract class _Started implements FlipcardsOverviewEvent {
   const factory _Started() = _$StartedImpl;
 }
 
@@ -510,7 +514,7 @@ abstract class _$$SubscribeImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SubscribeImplCopyWithImpl<$Res>
-    extends _$SampleItemsOverviewEventCopyWithImpl<$Res, _$SubscribeImpl>
+    extends _$FlipcardsOverviewEventCopyWithImpl<$Res, _$SubscribeImpl>
     implements _$$SubscribeImplCopyWith<$Res> {
   __$$SubscribeImplCopyWithImpl(
       _$SubscribeImpl _value, $Res Function(_$SubscribeImpl) _then)
@@ -524,7 +528,7 @@ class _$SubscribeImpl implements _Subscribe {
 
   @override
   String toString() {
-    return 'SampleItemsOverviewEvent.subscribe()';
+    return 'FlipcardsOverviewEvent.subscribe()';
   }
 
   @override
@@ -539,8 +543,8 @@ class _$SubscribeImpl implements _Subscribe {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SampleItemViewModel item) createItem,
-    required TResult Function(String id) deleteItem,
+    required TResult Function(FlipcardViewModel flipcard) createFlipcard,
+    required TResult Function(String id) deleteFlipcard,
     required TResult Function() started,
     required TResult Function() subscribe,
   }) {
@@ -550,8 +554,8 @@ class _$SubscribeImpl implements _Subscribe {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SampleItemViewModel item)? createItem,
-    TResult? Function(String id)? deleteItem,
+    TResult? Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult? Function(String id)? deleteFlipcard,
     TResult? Function()? started,
     TResult? Function()? subscribe,
   }) {
@@ -561,8 +565,8 @@ class _$SubscribeImpl implements _Subscribe {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SampleItemViewModel item)? createItem,
-    TResult Function(String id)? deleteItem,
+    TResult Function(FlipcardViewModel flipcard)? createFlipcard,
+    TResult Function(String id)? deleteFlipcard,
     TResult Function()? started,
     TResult Function()? subscribe,
     required TResult orElse(),
@@ -576,8 +580,8 @@ class _$SubscribeImpl implements _Subscribe {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreateItem value) createItem,
-    required TResult Function(_DeleteItem value) deleteItem,
+    required TResult Function(_CreateFlipcard value) createFlipcard,
+    required TResult Function(_DeleteFlipcard value) deleteFlipcard,
     required TResult Function(_Started value) started,
     required TResult Function(_Subscribe value) subscribe,
   }) {
@@ -587,8 +591,8 @@ class _$SubscribeImpl implements _Subscribe {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreateItem value)? createItem,
-    TResult? Function(_DeleteItem value)? deleteItem,
+    TResult? Function(_CreateFlipcard value)? createFlipcard,
+    TResult? Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult? Function(_Started value)? started,
     TResult? Function(_Subscribe value)? subscribe,
   }) {
@@ -598,8 +602,8 @@ class _$SubscribeImpl implements _Subscribe {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreateItem value)? createItem,
-    TResult Function(_DeleteItem value)? deleteItem,
+    TResult Function(_CreateFlipcard value)? createFlipcard,
+    TResult Function(_DeleteFlipcard value)? deleteFlipcard,
     TResult Function(_Started value)? started,
     TResult Function(_Subscribe value)? subscribe,
     required TResult orElse(),
@@ -611,18 +615,18 @@ class _$SubscribeImpl implements _Subscribe {
   }
 }
 
-abstract class _Subscribe implements SampleItemsOverviewEvent {
+abstract class _Subscribe implements FlipcardsOverviewEvent {
   const factory _Subscribe() = _$SubscribeImpl;
 }
 
 /// @nodoc
-mixin _$SampleItemsOverviewState {
+mixin _$FlipcardsOverviewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<SampleItemViewModel> items) success,
+    required TResult Function(List<FlipcardViewModel> flipcards) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -630,7 +634,7 @@ mixin _$SampleItemsOverviewState {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<SampleItemViewModel> items)? success,
+    TResult? Function(List<FlipcardViewModel> flipcards)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -638,7 +642,7 @@ mixin _$SampleItemsOverviewState {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<SampleItemViewModel> items)? success,
+    TResult Function(List<FlipcardViewModel> flipcards)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -670,17 +674,17 @@ mixin _$SampleItemsOverviewState {
 }
 
 /// @nodoc
-abstract class $SampleItemsOverviewStateCopyWith<$Res> {
-  factory $SampleItemsOverviewStateCopyWith(SampleItemsOverviewState value,
-          $Res Function(SampleItemsOverviewState) then) =
-      _$SampleItemsOverviewStateCopyWithImpl<$Res, SampleItemsOverviewState>;
+abstract class $FlipcardsOverviewStateCopyWith<$Res> {
+  factory $FlipcardsOverviewStateCopyWith(FlipcardsOverviewState value,
+          $Res Function(FlipcardsOverviewState) then) =
+      _$FlipcardsOverviewStateCopyWithImpl<$Res, FlipcardsOverviewState>;
 }
 
 /// @nodoc
-class _$SampleItemsOverviewStateCopyWithImpl<$Res,
-        $Val extends SampleItemsOverviewState>
-    implements $SampleItemsOverviewStateCopyWith<$Res> {
-  _$SampleItemsOverviewStateCopyWithImpl(this._value, this._then);
+class _$FlipcardsOverviewStateCopyWithImpl<$Res,
+        $Val extends FlipcardsOverviewState>
+    implements $FlipcardsOverviewStateCopyWith<$Res> {
+  _$FlipcardsOverviewStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -697,7 +701,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$SampleItemsOverviewStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$FlipcardsOverviewStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -711,7 +715,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'SampleItemsOverviewState.error()';
+    return 'FlipcardsOverviewState.error()';
   }
 
   @override
@@ -729,7 +733,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<SampleItemViewModel> items) success,
+    required TResult Function(List<FlipcardViewModel> flipcards) success,
   }) {
     return error();
   }
@@ -740,7 +744,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<SampleItemViewModel> items)? success,
+    TResult? Function(List<FlipcardViewModel> flipcards)? success,
   }) {
     return error?.call();
   }
@@ -751,7 +755,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<SampleItemViewModel> items)? success,
+    TResult Function(List<FlipcardViewModel> flipcards)? success,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -798,7 +802,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements SampleItemsOverviewState {
+abstract class _Error implements FlipcardsOverviewState {
   const factory _Error() = _$ErrorImpl;
 }
 
@@ -811,7 +815,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$SampleItemsOverviewStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$FlipcardsOverviewStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -825,7 +829,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'SampleItemsOverviewState.initial()';
+    return 'FlipcardsOverviewState.initial()';
   }
 
   @override
@@ -843,7 +847,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<SampleItemViewModel> items) success,
+    required TResult Function(List<FlipcardViewModel> flipcards) success,
   }) {
     return initial();
   }
@@ -854,7 +858,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<SampleItemViewModel> items)? success,
+    TResult? Function(List<FlipcardViewModel> flipcards)? success,
   }) {
     return initial?.call();
   }
@@ -865,7 +869,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<SampleItemViewModel> items)? success,
+    TResult Function(List<FlipcardViewModel> flipcards)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -912,7 +916,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements SampleItemsOverviewState {
+abstract class _Initial implements FlipcardsOverviewState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -925,7 +929,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$SampleItemsOverviewStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$FlipcardsOverviewStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -939,7 +943,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'SampleItemsOverviewState.loading()';
+    return 'FlipcardsOverviewState.loading()';
   }
 
   @override
@@ -957,7 +961,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<SampleItemViewModel> items) success,
+    required TResult Function(List<FlipcardViewModel> flipcards) success,
   }) {
     return loading();
   }
@@ -968,7 +972,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<SampleItemViewModel> items)? success,
+    TResult? Function(List<FlipcardViewModel> flipcards)? success,
   }) {
     return loading?.call();
   }
@@ -979,7 +983,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<SampleItemViewModel> items)? success,
+    TResult Function(List<FlipcardViewModel> flipcards)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1026,7 +1030,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements SampleItemsOverviewState {
+abstract class _Loading implements FlipcardsOverviewState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -1036,12 +1040,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SampleItemViewModel> items});
+  $Res call({List<FlipcardViewModel> flipcards});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$SampleItemsOverviewStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$FlipcardsOverviewStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -1050,13 +1054,13 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = null,
+    Object? flipcards = null,
   }) {
     return _then(_$SuccessImpl(
-      null == items
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<SampleItemViewModel>,
+      null == flipcards
+          ? _value._flipcards
+          : flipcards // ignore: cast_nullable_to_non_nullable
+              as List<FlipcardViewModel>,
     ));
   }
 }
@@ -1064,19 +1068,20 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(final List<SampleItemViewModel> items) : _items = items;
+  const _$SuccessImpl(final List<FlipcardViewModel> flipcards)
+      : _flipcards = flipcards;
 
-  final List<SampleItemViewModel> _items;
+  final List<FlipcardViewModel> _flipcards;
   @override
-  List<SampleItemViewModel> get items {
-    if (_items is EqualUnmodifiableListView) return _items;
+  List<FlipcardViewModel> get flipcards {
+    if (_flipcards is EqualUnmodifiableListView) return _flipcards;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
+    return EqualUnmodifiableListView(_flipcards);
   }
 
   @override
   String toString() {
-    return 'SampleItemsOverviewState.success(items: $items)';
+    return 'FlipcardsOverviewState.success(flipcards: $flipcards)';
   }
 
   @override
@@ -1084,12 +1089,13 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            const DeepCollectionEquality().equals(other._items, _items));
+            const DeepCollectionEquality()
+                .equals(other._flipcards, _flipcards));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_flipcards));
 
   @JsonKey(ignore: true)
   @override
@@ -1103,9 +1109,9 @@ class _$SuccessImpl implements _Success {
     required TResult Function() error,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<SampleItemViewModel> items) success,
+    required TResult Function(List<FlipcardViewModel> flipcards) success,
   }) {
-    return success(items);
+    return success(flipcards);
   }
 
   @override
@@ -1114,9 +1120,9 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? error,
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<SampleItemViewModel> items)? success,
+    TResult? Function(List<FlipcardViewModel> flipcards)? success,
   }) {
-    return success?.call(items);
+    return success?.call(flipcards);
   }
 
   @override
@@ -1125,11 +1131,11 @@ class _$SuccessImpl implements _Success {
     TResult Function()? error,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<SampleItemViewModel> items)? success,
+    TResult Function(List<FlipcardViewModel> flipcards)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(items);
+      return success(flipcards);
     }
     return orElse();
   }
@@ -1172,10 +1178,11 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements SampleItemsOverviewState {
-  const factory _Success(final List<SampleItemViewModel> items) = _$SuccessImpl;
+abstract class _Success implements FlipcardsOverviewState {
+  const factory _Success(final List<FlipcardViewModel> flipcards) =
+      _$SuccessImpl;
 
-  List<SampleItemViewModel> get items;
+  List<FlipcardViewModel> get flipcards;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;

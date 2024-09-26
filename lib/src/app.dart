@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:one_flipcards/src/core/router/app_router.dart';
-import 'package:one_flipcards/src/features/sample_feature/domain/sample_items_repository.dart';
-import 'package:one_flipcards/src/features/sample_feature/presentation/sample_item_details/cubit/sample_item_details_cubit.dart';
+import 'package:one_flipcards/src/features/flipcards/domain/flipcards_repository.dart';
+import 'package:one_flipcards/src/features/flipcards/presentation/flipcard_details/cubit/flipcard_details_cubit.dart';
 
 import '/i18n/translations.g.dart';
 import 'core/themes/app_theme.dart';
-import 'features/sample_feature/presentation/sample_items_overview/bloc/sample_items_overview_bloc.dart';
+import 'features/flipcards/presentation/flipcards_overview/bloc/flipcards_overview_bloc.dart';
 import 'features/settings/domain/settings_repository.dart';
 import 'features/settings/presentation/cubit/app_settings_cubit.dart';
 
@@ -15,11 +15,11 @@ import 'features/settings/presentation/cubit/app_settings_cubit.dart';
 class App extends StatelessWidget {
   final String flavor;
   final SettingsRepository _settingsRepository;
-  final SampleItemsRepository _sampleItemsRepository;
+  final FlipcardsRepository _sampleItemsRepository;
 
   const App(
       {required SettingsRepository settingsRepository,
-      required SampleItemsRepository sampleItemsRepository,
+      required FlipcardsRepository sampleItemsRepository,
       required this.flavor,
       super.key})
       : _settingsRepository = settingsRepository,
@@ -35,10 +35,10 @@ class App extends StatelessWidget {
       ],
       child: MultiBlocProvider(
         providers: [
-          BlocProvider<SampleItemsOverviewBloc>(
-              create: (_) => SampleItemsOverviewBloc(_sampleItemsRepository)),
-          BlocProvider<SampleItemDetailsCubit>(
-              create: (_) => SampleItemDetailsCubit(_sampleItemsRepository)),
+          BlocProvider<FlipcardsOverviewBloc>(
+              create: (_) => FlipcardsOverviewBloc(_sampleItemsRepository)),
+          BlocProvider<FlipcardDetailsCubit>(
+              create: (_) => FlipcardDetailsCubit(_sampleItemsRepository)),
           BlocProvider<AppSettingsCubit>(
             create: (_) => AppSettingsCubit(_settingsRepository)..initialize(),
           ),

@@ -1,42 +1,92 @@
 /// Generated file. Do not edit.
 ///
-/// Original: lib/i18n
+/// Source: lib/i18n
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
 /// Strings: 30 (15 per locale)
 ///
-/// Built on 2024-08-08 at 15:59 UTC
+/// Built on 2025-05-21 at 13:18 UTC
 
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, unused_import
 
 import 'package:flutter/widgets.dart';
-import 'package:slang/builder/model/node.dart';
+import 'package:intl/intl.dart';
+import 'package:slang/generated.dart';
 import 'package:slang_flutter/slang_flutter.dart';
 export 'package:slang_flutter/slang_flutter.dart';
 
-const AppLocale _baseLocale = AppLocale.en;
+import 'strings_pl.g.dart' deferred as l_pl;
+part 'strings_en.g.dart';
 
-/// Supported locales, see extension methods below.
+/// Supported locales.
 ///
 /// Usage:
 /// - LocaleSettings.setLocale(AppLocale.en) // set locale
 /// - Locale locale = AppLocale.en.flutterLocale // get flutter locale from enum
 /// - if (LocaleSettings.currentLocale == AppLocale.en) // locale check
 enum AppLocale with BaseAppLocale<AppLocale, Translations> {
-	en(languageCode: 'en', build: Translations.build),
-	pl(languageCode: 'pl', build: _StringsPl.build);
+	en(languageCode: 'en'),
+	pl(languageCode: 'pl');
 
-	const AppLocale({required this.languageCode, this.scriptCode, this.countryCode, required this.build}); // ignore: unused_element
+	const AppLocale({
+		required this.languageCode,
+		this.scriptCode, // ignore: unused_element, unused_element_parameter
+		this.countryCode, // ignore: unused_element, unused_element_parameter
+	});
 
 	@override final String languageCode;
 	@override final String? scriptCode;
 	@override final String? countryCode;
-	@override final TranslationBuilder<AppLocale, Translations> build;
+
+	@override
+	Future<Translations> build({
+		Map<String, Node>? overrides,
+		PluralResolver? cardinalResolver,
+		PluralResolver? ordinalResolver,
+	}) async {
+		switch (this) {
+			case AppLocale.en:
+				return TranslationsEn(
+					overrides: overrides,
+					cardinalResolver: cardinalResolver,
+					ordinalResolver: ordinalResolver,
+				);
+			case AppLocale.pl:
+				await l_pl.loadLibrary();
+				return l_pl.TranslationsPl(
+					overrides: overrides,
+					cardinalResolver: cardinalResolver,
+					ordinalResolver: ordinalResolver,
+				);
+		}
+	}
+
+	@override
+	Translations buildSync({
+		Map<String, Node>? overrides,
+		PluralResolver? cardinalResolver,
+		PluralResolver? ordinalResolver,
+	}) {
+		switch (this) {
+			case AppLocale.en:
+				return TranslationsEn(
+					overrides: overrides,
+					cardinalResolver: cardinalResolver,
+					ordinalResolver: ordinalResolver,
+				);
+			case AppLocale.pl:
+				return l_pl.TranslationsPl(
+					overrides: overrides,
+					cardinalResolver: cardinalResolver,
+					ordinalResolver: ordinalResolver,
+				);
+		}
+	}
 
 	/// Gets current instance managed by [LocaleSettings].
-	Translations get translations => LocaleSettings.instance.translationMap[this]!;
+	Translations get translations => LocaleSettings.instance.getTranslations(this);
 }
 
 /// Method A: Simple
@@ -82,19 +132,31 @@ extension BuildContextTranslationsExtension on BuildContext {
 
 /// Manages all translation instances and the current locale
 class LocaleSettings extends BaseFlutterLocaleSettings<AppLocale, Translations> {
-	LocaleSettings._() : super(utils: AppLocaleUtils.instance);
+	LocaleSettings._() : super(
+		utils: AppLocaleUtils.instance,
+		lazy: true,
+	);
 
 	static final instance = LocaleSettings._();
 
 	// static aliases (checkout base methods for documentation)
 	static AppLocale get currentLocale => instance.currentLocale;
 	static Stream<AppLocale> getLocaleStream() => instance.getLocaleStream();
-	static AppLocale setLocale(AppLocale locale, {bool? listenToDeviceLocale = false}) => instance.setLocale(locale, listenToDeviceLocale: listenToDeviceLocale);
-	static AppLocale setLocaleRaw(String rawLocale, {bool? listenToDeviceLocale = false}) => instance.setLocaleRaw(rawLocale, listenToDeviceLocale: listenToDeviceLocale);
-	static AppLocale useDeviceLocale() => instance.useDeviceLocale();
-	@Deprecated('Use [AppLocaleUtils.supportedLocales]') static List<Locale> get supportedLocales => instance.supportedLocales;
-	@Deprecated('Use [AppLocaleUtils.supportedLocalesRaw]') static List<String> get supportedLocalesRaw => instance.supportedLocalesRaw;
-	static void setPluralResolver({String? language, AppLocale? locale, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver}) => instance.setPluralResolver(
+	static Future<AppLocale> setLocale(AppLocale locale, {bool? listenToDeviceLocale = false}) => instance.setLocale(locale, listenToDeviceLocale: listenToDeviceLocale);
+	static Future<AppLocale> setLocaleRaw(String rawLocale, {bool? listenToDeviceLocale = false}) => instance.setLocaleRaw(rawLocale, listenToDeviceLocale: listenToDeviceLocale);
+	static Future<AppLocale> useDeviceLocale() => instance.useDeviceLocale();
+	static Future<void> setPluralResolver({String? language, AppLocale? locale, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver}) => instance.setPluralResolver(
+		language: language,
+		locale: locale,
+		cardinalResolver: cardinalResolver,
+		ordinalResolver: ordinalResolver,
+	);
+
+	// synchronous versions
+	static AppLocale setLocaleSync(AppLocale locale, {bool? listenToDeviceLocale = false}) => instance.setLocaleSync(locale, listenToDeviceLocale: listenToDeviceLocale);
+	static AppLocale setLocaleRawSync(String rawLocale, {bool? listenToDeviceLocale = false}) => instance.setLocaleRawSync(rawLocale, listenToDeviceLocale: listenToDeviceLocale);
+	static AppLocale useDeviceLocaleSync() => instance.useDeviceLocaleSync();
+	static void setPluralResolverSync({String? language, AppLocale? locale, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver}) => instance.setPluralResolverSync(
 		language: language,
 		locale: locale,
 		cardinalResolver: cardinalResolver,
@@ -104,7 +166,10 @@ class LocaleSettings extends BaseFlutterLocaleSettings<AppLocale, Translations> 
 
 /// Provides utility functions without any side effects.
 class AppLocaleUtils extends BaseAppLocaleUtils<AppLocale, Translations> {
-	AppLocaleUtils._() : super(baseLocale: _baseLocale, locales: AppLocale.values);
+	AppLocaleUtils._() : super(
+		baseLocale: AppLocale.en,
+		locales: AppLocale.values,
+	);
 
 	static final instance = AppLocaleUtils._();
 
@@ -114,265 +179,4 @@ class AppLocaleUtils extends BaseAppLocaleUtils<AppLocale, Translations> {
 	static AppLocale findDeviceLocale() => instance.findDeviceLocale();
 	static List<Locale> get supportedLocales => instance.supportedLocales;
 	static List<String> get supportedLocalesRaw => instance.supportedLocalesRaw;
-}
-
-// translations
-
-// Path: <root>
-class Translations implements BaseTranslations<AppLocale, Translations> {
-	/// Returns the current translations of the given [context].
-	///
-	/// Usage:
-	/// final t = Translations.of(context);
-	static Translations of(BuildContext context) => InheritedLocaleData.of<AppLocale, Translations>(context).translations;
-
-	/// You can call this constructor and build your own translation instance of this locale.
-	/// Constructing via the enum [AppLocale.build] is preferred.
-	Translations.build({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
-		: assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-		  $meta = TranslationMetadata(
-		    locale: AppLocale.en,
-		    overrides: overrides ?? {},
-		    cardinalResolver: cardinalResolver,
-		    ordinalResolver: ordinalResolver,
-		  ) {
-		$meta.setFlatMapFunction(_flatMapFunction);
-	}
-
-	/// Metadata for the translations of <en>.
-	@override final TranslationMetadata<AppLocale, Translations> $meta;
-
-	/// Access flat map
-	dynamic operator[](String key) => $meta.getTranslation(key);
-
-	late final Translations _root = this; // ignore: unused_field
-
-	// Translations
-	Map<String, String> get locales => {
-		'en': '🇬🇧 English (UK)',
-		'pl': '🇵🇱 Polski',
-	};
-	String get appTitle => 'Bloc Template';
-	late final _StringsNavigationEn navigation = _StringsNavigationEn._(_root);
-	late final _StringsItemsListEn itemsList = _StringsItemsListEn._(_root);
-	late final _StringsItemDetailsEn itemDetails = _StringsItemDetailsEn._(_root);
-	late final _StringsSettingsEn settings = _StringsSettingsEn._(_root);
-}
-
-// Path: navigation
-class _StringsNavigationEn {
-	_StringsNavigationEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get home => 'Home';
-	String get settings => 'Settings';
-}
-
-// Path: itemsList
-class _StringsItemsListEn {
-	_StringsItemsListEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Items';
-	String get sampleItemTitle => 'Sample item {itemId}';
-	String get refreshButton => 'Refresh list';
-}
-
-// Path: itemDetails
-class _StringsItemDetailsEn {
-	_StringsItemDetailsEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Item details';
-	String get detailsPlaceholder => 'Details for item {itemId}';
-	String get deleteButton => 'Delete this';
-}
-
-// Path: settings
-class _StringsSettingsEn {
-	_StringsSettingsEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Settings';
-	late final _StringsSettingsThemesEn themes = _StringsSettingsThemesEn._(_root);
-}
-
-// Path: settings.themes
-class _StringsSettingsThemesEn {
-	_StringsSettingsThemesEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Select a theme';
-	late final _StringsSettingsThemesOptionsEn options = _StringsSettingsThemesOptionsEn._(_root);
-}
-
-// Path: settings.themes.options
-class _StringsSettingsThemesOptionsEn {
-	_StringsSettingsThemesOptionsEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get light => 'Light';
-	String get dark => 'Dark';
-	String get system => 'System';
-}
-
-// Path: <root>
-class _StringsPl implements Translations {
-	/// You can call this constructor and build your own translation instance of this locale.
-	/// Constructing via the enum [AppLocale.build] is preferred.
-	_StringsPl.build({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
-		: assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-		  $meta = TranslationMetadata(
-		    locale: AppLocale.pl,
-		    overrides: overrides ?? {},
-		    cardinalResolver: cardinalResolver,
-		    ordinalResolver: ordinalResolver,
-		  ) {
-		$meta.setFlatMapFunction(_flatMapFunction);
-	}
-
-	/// Metadata for the translations of <pl>.
-	@override final TranslationMetadata<AppLocale, Translations> $meta;
-
-	/// Access flat map
-	@override dynamic operator[](String key) => $meta.getTranslation(key);
-
-	@override late final _StringsPl _root = this; // ignore: unused_field
-
-	// Translations
-	@override String get appTitle => 'Bloc Template (pl)';
-	@override late final _StringsNavigationPl navigation = _StringsNavigationPl._(_root);
-	@override late final _StringsItemsListPl itemsList = _StringsItemsListPl._(_root);
-	@override late final _StringsItemDetailsPl itemDetails = _StringsItemDetailsPl._(_root);
-	@override late final _StringsSettingsPl settings = _StringsSettingsPl._(_root);
-}
-
-// Path: navigation
-class _StringsNavigationPl implements _StringsNavigationEn {
-	_StringsNavigationPl._(this._root);
-
-	@override final _StringsPl _root; // ignore: unused_field
-
-	// Translations
-	@override String get home => 'Strona glowna';
-	@override String get settings => 'Ustawienia';
-}
-
-// Path: itemsList
-class _StringsItemsListPl implements _StringsItemsListEn {
-	_StringsItemsListPl._(this._root);
-
-	@override final _StringsPl _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Pozycje';
-	@override String get sampleItemTitle => 'Przykladowa pozycja {itemId}';
-	@override String get refreshButton => 'Odswiez';
-}
-
-// Path: itemDetails
-class _StringsItemDetailsPl implements _StringsItemDetailsEn {
-	_StringsItemDetailsPl._(this._root);
-
-	@override final _StringsPl _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Szczegoly';
-	@override String get detailsPlaceholder => 'Szczegoly pozycji {itemId}';
-	@override String get deleteButton => 'Usun to';
-}
-
-// Path: settings
-class _StringsSettingsPl implements _StringsSettingsEn {
-	_StringsSettingsPl._(this._root);
-
-	@override final _StringsPl _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Ustawienia';
-	@override late final _StringsSettingsThemesPl themes = _StringsSettingsThemesPl._(_root);
-}
-
-// Path: settings.themes
-class _StringsSettingsThemesPl implements _StringsSettingsThemesEn {
-	_StringsSettingsThemesPl._(this._root);
-
-	@override final _StringsPl _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'Wybierz motyw';
-	@override late final _StringsSettingsThemesOptionsPl options = _StringsSettingsThemesOptionsPl._(_root);
-}
-
-// Path: settings.themes.options
-class _StringsSettingsThemesOptionsPl implements _StringsSettingsThemesOptionsEn {
-	_StringsSettingsThemesOptionsPl._(this._root);
-
-	@override final _StringsPl _root; // ignore: unused_field
-
-	// Translations
-	@override String get light => 'Jasny';
-	@override String get dark => 'Ciemny';
-	@override String get system => 'Systemowy';
-}
-
-/// Flat map(s) containing all translations.
-/// Only for edge cases! For simple maps, use the map function of this library.
-
-extension on Translations {
-	dynamic _flatMapFunction(String path) {
-		switch (path) {
-			case 'locales.en': return '🇬🇧 English (UK)';
-			case 'locales.pl': return '🇵🇱 Polski';
-			case 'appTitle': return 'Bloc Template';
-			case 'navigation.home': return 'Home';
-			case 'navigation.settings': return 'Settings';
-			case 'itemsList.title': return 'Items';
-			case 'itemsList.sampleItemTitle': return 'Sample item {itemId}';
-			case 'itemsList.refreshButton': return 'Refresh list';
-			case 'itemDetails.title': return 'Item details';
-			case 'itemDetails.detailsPlaceholder': return 'Details for item {itemId}';
-			case 'itemDetails.deleteButton': return 'Delete this';
-			case 'settings.title': return 'Settings';
-			case 'settings.themes.title': return 'Select a theme';
-			case 'settings.themes.options.light': return 'Light';
-			case 'settings.themes.options.dark': return 'Dark';
-			case 'settings.themes.options.system': return 'System';
-			default: return null;
-		}
-	}
-}
-
-extension on _StringsPl {
-	dynamic _flatMapFunction(String path) {
-		switch (path) {
-			case 'appTitle': return 'Bloc Template (pl)';
-			case 'navigation.home': return 'Strona glowna';
-			case 'navigation.settings': return 'Ustawienia';
-			case 'itemsList.title': return 'Pozycje';
-			case 'itemsList.sampleItemTitle': return 'Przykladowa pozycja {itemId}';
-			case 'itemsList.refreshButton': return 'Odswiez';
-			case 'itemDetails.title': return 'Szczegoly';
-			case 'itemDetails.detailsPlaceholder': return 'Szczegoly pozycji {itemId}';
-			case 'itemDetails.deleteButton': return 'Usun to';
-			case 'settings.title': return 'Ustawienia';
-			case 'settings.themes.title': return 'Wybierz motyw';
-			case 'settings.themes.options.light': return 'Jasny';
-			case 'settings.themes.options.dark': return 'Ciemny';
-			case 'settings.themes.options.system': return 'Systemowy';
-			default: return null;
-		}
-	}
 }

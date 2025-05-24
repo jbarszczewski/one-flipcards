@@ -9,32 +9,51 @@ class $FlipcardsTable extends Flipcards
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
   $FlipcardsTable(this.attachedDatabase, [this._alias]);
-  static const VerificationMeta _backContentMeta =
-      const VerificationMeta('backContent');
+  static const VerificationMeta _backContentMeta = const VerificationMeta(
+    'backContent',
+  );
   @override
   late final GeneratedColumn<String> backContent = GeneratedColumn<String>(
-      'back_content', aliasedName, false,
-      type: DriftSqlType.string, requiredDuringInsert: true);
-  static const VerificationMeta _frontContentMeta =
-      const VerificationMeta('frontContent');
+    'back_content',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _frontContentMeta = const VerificationMeta(
+    'frontContent',
+  );
   @override
   late final GeneratedColumn<String> frontContent = GeneratedColumn<String>(
-      'front_content', aliasedName, false,
-      type: DriftSqlType.string, requiredDuringInsert: true);
+    'front_content',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
   static const VerificationMeta _idMeta = const VerificationMeta('id');
   @override
   late final GeneratedColumn<String> id = GeneratedColumn<String>(
-      'id', aliasedName, false,
-      additionalChecks:
-          GeneratedColumn.checkTextLength(minTextLength: 36, maxTextLength: 36),
-      type: DriftSqlType.string,
-      requiredDuringInsert: true,
-      defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'));
+    'id',
+    aliasedName,
+    false,
+    additionalChecks: GeneratedColumn.checkTextLength(
+      minTextLength: 36,
+      maxTextLength: 36,
+    ),
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'),
+  );
   static const VerificationMeta _tagsMeta = const VerificationMeta('tags');
   @override
   late final GeneratedColumn<String> tags = GeneratedColumn<String>(
-      'tags', aliasedName, true,
-      type: DriftSqlType.string, requiredDuringInsert: false);
+    'tags',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
   @override
   List<GeneratedColumn> get $columns => [backContent, frontContent, id, tags];
   @override
@@ -43,23 +62,31 @@ class $FlipcardsTable extends Flipcards
   String get actualTableName => $name;
   static const String $name = 'flipcards';
   @override
-  VerificationContext validateIntegrity(Insertable<Flipcard> instance,
-      {bool isInserting = false}) {
+  VerificationContext validateIntegrity(
+    Insertable<Flipcard> instance, {
+    bool isInserting = false,
+  }) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
     if (data.containsKey('back_content')) {
       context.handle(
+        _backContentMeta,
+        backContent.isAcceptableOrUnknown(
+          data['back_content']!,
           _backContentMeta,
-          backContent.isAcceptableOrUnknown(
-              data['back_content']!, _backContentMeta));
+        ),
+      );
     } else if (isInserting) {
       context.missing(_backContentMeta);
     }
     if (data.containsKey('front_content')) {
       context.handle(
+        _frontContentMeta,
+        frontContent.isAcceptableOrUnknown(
+          data['front_content']!,
           _frontContentMeta,
-          frontContent.isAcceptableOrUnknown(
-              data['front_content']!, _frontContentMeta));
+        ),
+      );
     } else if (isInserting) {
       context.missing(_frontContentMeta);
     }
@@ -70,7 +97,9 @@ class $FlipcardsTable extends Flipcards
     }
     if (data.containsKey('tags')) {
       context.handle(
-          _tagsMeta, tags.isAcceptableOrUnknown(data['tags']!, _tagsMeta));
+        _tagsMeta,
+        tags.isAcceptableOrUnknown(data['tags']!, _tagsMeta),
+      );
     }
     return context;
   }
@@ -81,14 +110,25 @@ class $FlipcardsTable extends Flipcards
   Flipcard map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
     return Flipcard(
-      backContent: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}back_content'])!,
-      frontContent: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}front_content'])!,
-      id: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
-      tags: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}tags']),
+      backContent:
+          attachedDatabase.typeMapping.read(
+            DriftSqlType.string,
+            data['${effectivePrefix}back_content'],
+          )!,
+      frontContent:
+          attachedDatabase.typeMapping.read(
+            DriftSqlType.string,
+            data['${effectivePrefix}front_content'],
+          )!,
+      id:
+          attachedDatabase.typeMapping.read(
+            DriftSqlType.string,
+            data['${effectivePrefix}id'],
+          )!,
+      tags: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}tags'],
+      ),
     );
   }
 
@@ -103,11 +143,12 @@ class Flipcard extends DataClass implements Insertable<Flipcard> {
   final String frontContent;
   final String id;
   final String? tags;
-  const Flipcard(
-      {required this.backContent,
-      required this.frontContent,
-      required this.id,
-      this.tags});
+  const Flipcard({
+    required this.backContent,
+    required this.frontContent,
+    required this.id,
+    this.tags,
+  });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -129,8 +170,10 @@ class Flipcard extends DataClass implements Insertable<Flipcard> {
     );
   }
 
-  factory Flipcard.fromJson(Map<String, dynamic> json,
-      {ValueSerializer? serializer}) {
+  factory Flipcard.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return Flipcard(
       backContent: serializer.fromJson<String>(json['backContent']),
@@ -150,24 +193,25 @@ class Flipcard extends DataClass implements Insertable<Flipcard> {
     };
   }
 
-  Flipcard copyWith(
-          {String? backContent,
-          String? frontContent,
-          String? id,
-          Value<String?> tags = const Value.absent()}) =>
-      Flipcard(
-        backContent: backContent ?? this.backContent,
-        frontContent: frontContent ?? this.frontContent,
-        id: id ?? this.id,
-        tags: tags.present ? tags.value : this.tags,
-      );
+  Flipcard copyWith({
+    String? backContent,
+    String? frontContent,
+    String? id,
+    Value<String?> tags = const Value.absent(),
+  }) => Flipcard(
+    backContent: backContent ?? this.backContent,
+    frontContent: frontContent ?? this.frontContent,
+    id: id ?? this.id,
+    tags: tags.present ? tags.value : this.tags,
+  );
   Flipcard copyWithCompanion(FlipcardsCompanion data) {
     return Flipcard(
       backContent:
           data.backContent.present ? data.backContent.value : this.backContent,
-      frontContent: data.frontContent.present
-          ? data.frontContent.value
-          : this.frontContent,
+      frontContent:
+          data.frontContent.present
+              ? data.frontContent.value
+              : this.frontContent,
       id: data.id.present ? data.id.value : this.id,
       tags: data.tags.present ? data.tags.value : this.tags,
     );
@@ -215,9 +259,9 @@ class FlipcardsCompanion extends UpdateCompanion<Flipcard> {
     required String id,
     this.tags = const Value.absent(),
     this.rowid = const Value.absent(),
-  })  : backContent = Value(backContent),
-        frontContent = Value(frontContent),
-        id = Value(id);
+  }) : backContent = Value(backContent),
+       frontContent = Value(frontContent),
+       id = Value(id);
   static Insertable<Flipcard> custom({
     Expression<String>? backContent,
     Expression<String>? frontContent,
@@ -234,12 +278,13 @@ class FlipcardsCompanion extends UpdateCompanion<Flipcard> {
     });
   }
 
-  FlipcardsCompanion copyWith(
-      {Value<String>? backContent,
-      Value<String>? frontContent,
-      Value<String>? id,
-      Value<String?>? tags,
-      Value<int>? rowid}) {
+  FlipcardsCompanion copyWith({
+    Value<String>? backContent,
+    Value<String>? frontContent,
+    Value<String>? id,
+    Value<String?>? tags,
+    Value<int>? rowid,
+  }) {
     return FlipcardsCompanion(
       backContent: backContent ?? this.backContent,
       frontContent: frontContent ?? this.frontContent,
@@ -294,115 +339,195 @@ abstract class _$LocalDatabase extends GeneratedDatabase {
   List<DatabaseSchemaEntity> get allSchemaEntities => [flipcards];
 }
 
-typedef $$FlipcardsTableCreateCompanionBuilder = FlipcardsCompanion Function({
-  required String backContent,
-  required String frontContent,
-  required String id,
-  Value<String?> tags,
-  Value<int> rowid,
-});
-typedef $$FlipcardsTableUpdateCompanionBuilder = FlipcardsCompanion Function({
-  Value<String> backContent,
-  Value<String> frontContent,
-  Value<String> id,
-  Value<String?> tags,
-  Value<int> rowid,
-});
-
-class $$FlipcardsTableTableManager extends RootTableManager<
-    _$LocalDatabase,
-    $FlipcardsTable,
-    Flipcard,
-    $$FlipcardsTableFilterComposer,
-    $$FlipcardsTableOrderingComposer,
-    $$FlipcardsTableCreateCompanionBuilder,
-    $$FlipcardsTableUpdateCompanionBuilder> {
-  $$FlipcardsTableTableManager(_$LocalDatabase db, $FlipcardsTable table)
-      : super(TableManagerState(
-          db: db,
-          table: table,
-          filteringComposer:
-              $$FlipcardsTableFilterComposer(ComposerState(db, table)),
-          orderingComposer:
-              $$FlipcardsTableOrderingComposer(ComposerState(db, table)),
-          updateCompanionCallback: ({
-            Value<String> backContent = const Value.absent(),
-            Value<String> frontContent = const Value.absent(),
-            Value<String> id = const Value.absent(),
-            Value<String?> tags = const Value.absent(),
-            Value<int> rowid = const Value.absent(),
-          }) =>
-              FlipcardsCompanion(
-            backContent: backContent,
-            frontContent: frontContent,
-            id: id,
-            tags: tags,
-            rowid: rowid,
-          ),
-          createCompanionCallback: ({
-            required String backContent,
-            required String frontContent,
-            required String id,
-            Value<String?> tags = const Value.absent(),
-            Value<int> rowid = const Value.absent(),
-          }) =>
-              FlipcardsCompanion.insert(
-            backContent: backContent,
-            frontContent: frontContent,
-            id: id,
-            tags: tags,
-            rowid: rowid,
-          ),
-        ));
-}
+typedef $$FlipcardsTableCreateCompanionBuilder =
+    FlipcardsCompanion Function({
+      required String backContent,
+      required String frontContent,
+      required String id,
+      Value<String?> tags,
+      Value<int> rowid,
+    });
+typedef $$FlipcardsTableUpdateCompanionBuilder =
+    FlipcardsCompanion Function({
+      Value<String> backContent,
+      Value<String> frontContent,
+      Value<String> id,
+      Value<String?> tags,
+      Value<int> rowid,
+    });
 
 class $$FlipcardsTableFilterComposer
-    extends FilterComposer<_$LocalDatabase, $FlipcardsTable> {
-  $$FlipcardsTableFilterComposer(super.$state);
-  ColumnFilters<String> get backContent => $state.composableBuilder(
-      column: $state.table.backContent,
-      builder: (column, joinBuilders) =>
-          ColumnFilters(column, joinBuilders: joinBuilders));
+    extends Composer<_$LocalDatabase, $FlipcardsTable> {
+  $$FlipcardsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get backContent => $composableBuilder(
+    column: $table.backContent,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get frontContent => $state.composableBuilder(
-      column: $state.table.frontContent,
-      builder: (column, joinBuilders) =>
-          ColumnFilters(column, joinBuilders: joinBuilders));
+  ColumnFilters<String> get frontContent => $composableBuilder(
+    column: $table.frontContent,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          ColumnFilters(column, joinBuilders: joinBuilders));
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
 
-  ColumnFilters<String> get tags => $state.composableBuilder(
-      column: $state.table.tags,
-      builder: (column, joinBuilders) =>
-          ColumnFilters(column, joinBuilders: joinBuilders));
+  ColumnFilters<String> get tags => $composableBuilder(
+    column: $table.tags,
+    builder: (column) => ColumnFilters(column),
+  );
 }
 
 class $$FlipcardsTableOrderingComposer
-    extends OrderingComposer<_$LocalDatabase, $FlipcardsTable> {
-  $$FlipcardsTableOrderingComposer(super.$state);
-  ColumnOrderings<String> get backContent => $state.composableBuilder(
-      column: $state.table.backContent,
-      builder: (column, joinBuilders) =>
-          ColumnOrderings(column, joinBuilders: joinBuilders));
+    extends Composer<_$LocalDatabase, $FlipcardsTable> {
+  $$FlipcardsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get backContent => $composableBuilder(
+    column: $table.backContent,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get frontContent => $state.composableBuilder(
-      column: $state.table.frontContent,
-      builder: (column, joinBuilders) =>
-          ColumnOrderings(column, joinBuilders: joinBuilders));
+  ColumnOrderings<String> get frontContent => $composableBuilder(
+    column: $table.frontContent,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          ColumnOrderings(column, joinBuilders: joinBuilders));
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
 
-  ColumnOrderings<String> get tags => $state.composableBuilder(
-      column: $state.table.tags,
-      builder: (column, joinBuilders) =>
-          ColumnOrderings(column, joinBuilders: joinBuilders));
+  ColumnOrderings<String> get tags => $composableBuilder(
+    column: $table.tags,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
+
+class $$FlipcardsTableAnnotationComposer
+    extends Composer<_$LocalDatabase, $FlipcardsTable> {
+  $$FlipcardsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get backContent => $composableBuilder(
+    column: $table.backContent,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get frontContent => $composableBuilder(
+    column: $table.frontContent,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get tags =>
+      $composableBuilder(column: $table.tags, builder: (column) => column);
+}
+
+class $$FlipcardsTableTableManager
+    extends
+        RootTableManager<
+          _$LocalDatabase,
+          $FlipcardsTable,
+          Flipcard,
+          $$FlipcardsTableFilterComposer,
+          $$FlipcardsTableOrderingComposer,
+          $$FlipcardsTableAnnotationComposer,
+          $$FlipcardsTableCreateCompanionBuilder,
+          $$FlipcardsTableUpdateCompanionBuilder,
+          (
+            Flipcard,
+            BaseReferences<_$LocalDatabase, $FlipcardsTable, Flipcard>,
+          ),
+          Flipcard,
+          PrefetchHooks Function()
+        > {
+  $$FlipcardsTableTableManager(_$LocalDatabase db, $FlipcardsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer:
+              () => $$FlipcardsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer:
+              () => $$FlipcardsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer:
+              () => $$FlipcardsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> backContent = const Value.absent(),
+                Value<String> frontContent = const Value.absent(),
+                Value<String> id = const Value.absent(),
+                Value<String?> tags = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => FlipcardsCompanion(
+                backContent: backContent,
+                frontContent: frontContent,
+                id: id,
+                tags: tags,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String backContent,
+                required String frontContent,
+                required String id,
+                Value<String?> tags = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => FlipcardsCompanion.insert(
+                backContent: backContent,
+                frontContent: frontContent,
+                id: id,
+                tags: tags,
+                rowid: rowid,
+              ),
+          withReferenceMapper:
+              (p0) =>
+                  p0
+                      .map(
+                        (e) => (
+                          e.readTable(table),
+                          BaseReferences(db, table, e),
+                        ),
+                      )
+                      .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$FlipcardsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$LocalDatabase,
+      $FlipcardsTable,
+      Flipcard,
+      $$FlipcardsTableFilterComposer,
+      $$FlipcardsTableOrderingComposer,
+      $$FlipcardsTableAnnotationComposer,
+      $$FlipcardsTableCreateCompanionBuilder,
+      $$FlipcardsTableUpdateCompanionBuilder,
+      (Flipcard, BaseReferences<_$LocalDatabase, $FlipcardsTable, Flipcard>),
+      Flipcard,
+      PrefetchHooks Function()
+    >;
 
 class $LocalDatabaseManager {
   final _$LocalDatabase _db;

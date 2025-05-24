@@ -18,26 +18,27 @@ class FlipcardDetailsScreen extends StatelessWidget {
         children: [
           // block builder that use FlipcardDetailsCubit
           BlocBuilder<FlipcardDetailsCubit, FlipcardDetailsState>(
-            builder: (context, state) => state.when(
-              initial: () {
-                context.read<FlipcardDetailsCubit>().getItemById(id);
-                return const Center(child: CircularProgressIndicator());
-              },
-              loading: () => const Center(child: CircularProgressIndicator()),
-              success: (item) => Column(
-                children: [
-                  Text('ID: ${item.id}'),
-                  Text('Name: ${item.frontContent}'),
-                  Text('Optional content: ${item.tags}'),
-                  ElevatedButton(
-                    child: Text(context.l10n.itemDetails.deleteButton),
-                    onPressed: () =>
-                        context.read<FlipcardDetailsCubit>().deleteItem(id),
-                  )
-                ],
-              ),
-              error: () => const Center(child: Text('Error')),
-            ),
+            builder:
+                (context, state) => state.when(
+                  initial: () {
+                    context.read<FlipcardDetailsCubit>().getItemById(id);
+                    return const Center(child: CircularProgressIndicator());
+                  },
+                  loading: () => const Center(child: CircularProgressIndicator()),
+                  success:
+                      (item) => Column(
+                        children: [
+                          Text('ID: ${item.id}'),
+                          Text('Name: ${item.frontContent}'),
+                          Text('Optional content: ${item.tags}'),
+                          ElevatedButton(
+                            child: Text(context.l10n.itemDetails.deleteButton),
+                            onPressed: () => context.read<FlipcardDetailsCubit>().deleteItem(id),
+                          ),
+                        ],
+                      ),
+                  error: () => const Center(child: Text('Error')),
+                ),
           ),
         ],
       ),

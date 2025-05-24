@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,145 +10,136 @@ part of 'app_settings.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$AppSettings {
-  String get languageCode => throw _privateConstructorUsedError;
-  ThemeMode get themeMode => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $AppSettingsCopyWith<AppSettings> get copyWith =>
-      throw _privateConstructorUsedError;
+ String get languageCode; ThemeMode get themeMode;
+/// Create a copy of AppSettings
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AppSettingsCopyWith<AppSettings> get copyWith => _$AppSettingsCopyWithImpl<AppSettings>(this as AppSettings, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AppSettings&&(identical(other.languageCode, languageCode) || other.languageCode == languageCode)&&(identical(other.themeMode, themeMode) || other.themeMode == themeMode));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,languageCode,themeMode);
+
+@override
+String toString() {
+  return 'AppSettings(languageCode: $languageCode, themeMode: $themeMode)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AppSettingsCopyWith<$Res> {
-  factory $AppSettingsCopyWith(
-          AppSettings value, $Res Function(AppSettings) then) =
-      _$AppSettingsCopyWithImpl<$Res, AppSettings>;
-  @useResult
-  $Res call({String languageCode, ThemeMode themeMode});
-}
+abstract mixin class $AppSettingsCopyWith<$Res>  {
+  factory $AppSettingsCopyWith(AppSettings value, $Res Function(AppSettings) _then) = _$AppSettingsCopyWithImpl;
+@useResult
+$Res call({
+ String languageCode, ThemeMode themeMode
+});
 
+
+
+
+}
 /// @nodoc
-class _$AppSettingsCopyWithImpl<$Res, $Val extends AppSettings>
+class _$AppSettingsCopyWithImpl<$Res>
     implements $AppSettingsCopyWith<$Res> {
-  _$AppSettingsCopyWithImpl(this._value, this._then);
+  _$AppSettingsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AppSettings _self;
+  final $Res Function(AppSettings) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? languageCode = null,
-    Object? themeMode = null,
-  }) {
-    return _then(_value.copyWith(
-      languageCode: null == languageCode
-          ? _value.languageCode
-          : languageCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      themeMode: null == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode,
-    ) as $Val);
-  }
+/// Create a copy of AppSettings
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? languageCode = null,Object? themeMode = null,}) {
+  return _then(_self.copyWith(
+languageCode: null == languageCode ? _self.languageCode : languageCode // ignore: cast_nullable_to_non_nullable
+as String,themeMode: null == themeMode ? _self.themeMode : themeMode // ignore: cast_nullable_to_non_nullable
+as ThemeMode,
+  ));
 }
 
-/// @nodoc
-abstract class _$$AppSettingsImplCopyWith<$Res>
-    implements $AppSettingsCopyWith<$Res> {
-  factory _$$AppSettingsImplCopyWith(
-          _$AppSettingsImpl value, $Res Function(_$AppSettingsImpl) then) =
-      __$$AppSettingsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String languageCode, ThemeMode themeMode});
 }
 
-/// @nodoc
-class __$$AppSettingsImplCopyWithImpl<$Res>
-    extends _$AppSettingsCopyWithImpl<$Res, _$AppSettingsImpl>
-    implements _$$AppSettingsImplCopyWith<$Res> {
-  __$$AppSettingsImplCopyWithImpl(
-      _$AppSettingsImpl _value, $Res Function(_$AppSettingsImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? languageCode = null,
-    Object? themeMode = null,
-  }) {
-    return _then(_$AppSettingsImpl(
-      languageCode: null == languageCode
-          ? _value.languageCode
-          : languageCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      themeMode: null == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode,
-    ));
-  }
-}
 
 /// @nodoc
 
-class _$AppSettingsImpl implements _AppSettings {
-  const _$AppSettingsImpl(
-      {required this.languageCode, required this.themeMode});
 
-  @override
-  final String languageCode;
-  @override
-  final ThemeMode themeMode;
+class _AppSettings implements AppSettings {
+  const _AppSettings({required this.languageCode, required this.themeMode});
+  
 
-  @override
-  String toString() {
-    return 'AppSettings(languageCode: $languageCode, themeMode: $themeMode)';
-  }
+@override final  String languageCode;
+@override final  ThemeMode themeMode;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AppSettingsImpl &&
-            (identical(other.languageCode, languageCode) ||
-                other.languageCode == languageCode) &&
-            (identical(other.themeMode, themeMode) ||
-                other.themeMode == themeMode));
-  }
+/// Create a copy of AppSettings
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AppSettingsCopyWith<_AppSettings> get copyWith => __$AppSettingsCopyWithImpl<_AppSettings>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, languageCode, themeMode);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AppSettingsImplCopyWith<_$AppSettingsImpl> get copyWith =>
-      __$$AppSettingsImplCopyWithImpl<_$AppSettingsImpl>(this, _$identity);
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppSettings&&(identical(other.languageCode, languageCode) || other.languageCode == languageCode)&&(identical(other.themeMode, themeMode) || other.themeMode == themeMode));
 }
 
-abstract class _AppSettings implements AppSettings {
-  const factory _AppSettings(
-      {required final String languageCode,
-      required final ThemeMode themeMode}) = _$AppSettingsImpl;
 
-  @override
-  String get languageCode;
-  @override
-  ThemeMode get themeMode;
-  @override
-  @JsonKey(ignore: true)
-  _$$AppSettingsImplCopyWith<_$AppSettingsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,languageCode,themeMode);
+
+@override
+String toString() {
+  return 'AppSettings(languageCode: $languageCode, themeMode: $themeMode)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AppSettingsCopyWith<$Res> implements $AppSettingsCopyWith<$Res> {
+  factory _$AppSettingsCopyWith(_AppSettings value, $Res Function(_AppSettings) _then) = __$AppSettingsCopyWithImpl;
+@override @useResult
+$Res call({
+ String languageCode, ThemeMode themeMode
+});
+
+
+
+
+}
+/// @nodoc
+class __$AppSettingsCopyWithImpl<$Res>
+    implements _$AppSettingsCopyWith<$Res> {
+  __$AppSettingsCopyWithImpl(this._self, this._then);
+
+  final _AppSettings _self;
+  final $Res Function(_AppSettings) _then;
+
+/// Create a copy of AppSettings
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? languageCode = null,Object? themeMode = null,}) {
+  return _then(_AppSettings(
+languageCode: null == languageCode ? _self.languageCode : languageCode // ignore: cast_nullable_to_non_nullable
+as String,themeMode: null == themeMode ? _self.themeMode : themeMode // ignore: cast_nullable_to_non_nullable
+as ThemeMode,
+  ));
+}
+
+
+}
+
+// dart format on

@@ -1,61 +1,22 @@
-# quick_notes
+# one_flipcards
 
-## Dev
+Yet another flipcards app.
 
-### Default runner in watch mode
+# Development
 
-dart run build_runner watch -d
+## Flavors
 
-## Slang
+### Update icons
 
-### Runner for languages
-
-One time: dart run slang apply
-
-Watch mode: dart run slang watch
-
-Analyze: dart run slang analyze --full
-
-### IMPORTANT:
-
-Using `translate_var` does not rebuild widget when translation change. To make
-sure all pages are rebuild when switching language use this in `build` method:
-
-```
-final l10n = Translations.of(context);
-or
-context.l10n
+```bash
+flutter pub run flutter_flavorizr -p android:icons,ios:icons,macos:icons
 ```
 
-See:
-[https://pub.dev/packages/slang#-changing-locale](https://pub.dev/packages/slang#-changing-locale)
+### Clean build - macOS
 
-### iOS Config
-
-Add the supported locales to your Info.plist file.
-
-In this example, we support English (en) and German (de).
-
-File: ios/Runner/Info.plist
-
-```
-<key>CFBundleLocalizations</key>
-<array>
-   <string>en</string>
-   <string>pl</string>
-</array>
-```
-
-## Splashscreen
-
-### update
-
-dart run flutter_native_splash:create
-
-### remove
-
-dart run flutter_native_splash:remove
-
-## Launcher icons
-### Generate
-dart run flutter_launcher_icons:main -f flutter_launcher_icons*
+````
+flutter clean 
+pod outdated 
+pod repo update 
+pod update
+````

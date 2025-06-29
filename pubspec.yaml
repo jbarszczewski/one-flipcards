@@ -1,6 +1,6 @@
 name: one_flipcards
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -9,11 +9,27 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_hooks: ^0.21.2
+  hooks_riverpod: ^2.6.1
+  powersync: ^1.13.0
+  riverpod_annotation: ^2.6.1
+  supabase_flutter: ^2.9.0
 
 dev_dependencies:
+  build_runner: ^2.4.15
+  custom_lint: ^0.7.5
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  riverpod_generator: ^2.6.5
+  riverpod_lint: ^2.6.5
+
+# workaround for lint issues with analyzer and custom_lint
+# https://github.com/invertase/dart_custom_lint/issues/332
+dependency_overrides:
+  analyzer: 7.3.0
+  analyzer_plugin: 0.13.0
+  custom_lint_visitor: 1.0.0+7.3.0
 
 flutter:
   uses-material-design: true
